@@ -7,6 +7,8 @@ import {
   Bell,
   FileText,
   LogOut,
+  Clock3,
+  X,
 } from "lucide-react";
 
 function Dashboard() {
@@ -14,8 +16,27 @@ function Dashboard() {
 
   const [activeMenu, setActiveMenu] = useState("dashboard");
 
+  // CLOCK IN / OUT POPUP
+  const [showPopup, setShowPopup] = useState(false);
+
+  const [isClockedIn, setIsClockedIn] = useState(false);
+
+  const [time, setTime] = useState("");
+
+  const handleClockAction = () => {
+    const currentTime = new Date().toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    setTime(currentTime);
+
+    setIsClockedIn(!isClockedIn);
+  };
+
   return (
-    <div className="min-h-screen bg-[#0f172a] flex text-white">
+    <div className="min-h-screen bg-[#0f172a] flex text-white relative">
+      {/* SIDEBAR */}
       <div className="w-72 bg-white/5 backdrop-blur-xl border-r border-white/10 p-6">
         <h1 className="text-3xl font-bold mb-12">Employee Portal</h1>
 
@@ -77,30 +98,92 @@ function Dashboard() {
         </button>
       </div>
 
+      {/* MAIN CONTENT */}
       <div className="flex-1 p-10">
         {/* TOPBAR */}
         <div className="flex items-center justify-between mb-10">
           <div>
             <h1 className="text-4xl font-bold">Welcome Back 👋</h1>
 
-            <p className="text-gray-400 mt-2">Employee Dashboard</p>
+            <p className="text-gray-400 mt-2">Praneeth Konda</p>
           </div>
 
-          <div className="flex items-center gap-4 bg-white/10 px-5 py-3 rounded-2xl">
-            <img
-              src="https://i.pravatar.cc/100"
-              alt="profile"
-              className="w-12 h-12 rounded-full"
-            />
+          {/* RIGHT SECTION */}
+          <div className="flex items-center gap-5">
+            {/* CLOCK BUTTON */}
+            <button
+              onClick={() => setShowPopup(true)}
+              className="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 px-5 py-3 rounded-2xl transition shadow-lg"
+            >
+              <Clock3 size={20} />
+              {isClockedIn ? "Clock Out" : "Clock In"}
+            </button>
 
-            <div>
-              <h3 className="font-semibold">Shiva</h3>
+            {/* PROFILE */}
+            <div className="flex items-center gap-4 bg-white/10 px-5 py-3 rounded-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1480429370139-e0132c086e2a?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="profile"
+                className="w-12 h-12 rounded-full"
+              />
 
-              <p className="text-sm text-gray-400">UI Developer</p>
+              <div>
+                <h3 className="font-semibold">praneeth</h3>
+
+                <p className="text-sm text-gray-400">UI Developer</p>
+              </div>
             </div>
           </div>
         </div>
 
+        {/* POPUP */}
+        {showPopup && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-[#111827] w-[400px] p-8 rounded-3xl border border-white/10 relative shadow-2xl">
+              {/* CLOSE BUTTON */}
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute top-5 right-5 text-gray-400 hover:text-white"
+              >
+                <X />
+              </button>
+
+              <h2 className="text-3xl font-bold mb-6 text-center">
+                {isClockedIn ? "Clock Out" : "Clock In"}
+              </h2>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+                <p className="text-gray-400 mb-3">Current Time</p>
+
+                <h1 className="text-5xl font-bold">
+                  {new Date().toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </h1>
+              </div>
+
+              <button
+                onClick={handleClockAction}
+                className={`w-full mt-8 py-4 rounded-2xl text-lg font-semibold transition ${
+                  isClockedIn
+                    ? "bg-red-500 hover:bg-red-600"
+                    : "bg-green-500 hover:bg-green-600"
+                }`}
+              >
+                {isClockedIn ? "Clock Out" : "Clock In"}
+              </button>
+
+              {time && (
+                <p className="text-center text-gray-400 mt-5">
+                  Last Action Time : {time}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* DASHBOARD */}
         {activeMenu === "dashboard" && (
           <div>
             <h2 className="text-3xl font-bold mb-8">Dashboard Overview</h2>
@@ -122,17 +205,18 @@ function Dashboard() {
                 <p className="mt-3 text-purple-100">Remaining Leaves</p>
               </div>
 
-              <div className="bg-gradient-to-br from-cyan-500 to-blue-700 p-8 rounded-3xl shadow-2xl hover:scale-105 transition">
+              {/* <div className="bg-gradient-to-br from-cyan-500 to-blue-700 p-8 rounded-3xl shadow-2xl hover:scale-105 transition">
                 <h3 className="text-lg">Tasks</h3>
 
                 <h1 className="text-5xl font-bold mt-6">5</h1>
 
                 <p className="mt-3 text-cyan-100">Pending Tasks</p>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
 
+        {/* ATTENDANCE */}
         {activeMenu === "attendance" && (
           <div>
             <h2 className="text-3xl font-bold mb-8">Attendance Details</h2>
@@ -161,6 +245,7 @@ function Dashboard() {
           </div>
         )}
 
+        {/* LEAVES */}
         {activeMenu === "leaves" && (
           <div>
             <h2 className="text-3xl font-bold mb-8">Leave Requests</h2>
@@ -189,6 +274,7 @@ function Dashboard() {
           </div>
         )}
 
+        {/* NOTIFICATIONS */}
         {activeMenu === "notifications" && (
           <div>
             <h2 className="text-3xl font-bold mb-8">Notifications</h2>
