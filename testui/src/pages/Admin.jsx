@@ -167,7 +167,7 @@ function Admin() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Employee List</h2>
 
-            <div className="space-y-5">
+            <div className="space-y-5 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex justify-between">
                 <div>
                   <h3 className="font-semibold">Shiva</h3>
@@ -190,9 +190,9 @@ function Admin() {
 
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex justify-between">
                 <div>
-                  <h3 className="font-semibold">Sai</h3>
+                  <h3 className="font-semibold">Ashish</h3>
 
-                  <p className="text-gray-400">HR Executive</p>
+                  <p className="text-gray-400">Full Stack Developer</p>
                 </div>
 
                 <span className="text-yellow-400">On Leave</span>
@@ -206,10 +206,10 @@ function Admin() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Employee Attendance</h2>
 
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-5">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 space-y-5 w-[30%]">
               <div className="flex justify-between">
                 <span>Shiva</span>
-
+                <span className="text-green-400 mx-[auto] ">9:50 AM</span>
                 <span className="text-green-400">Present</span>
               </div>
 
@@ -233,7 +233,7 @@ function Admin() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Leave Requests</h2>
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-3xl">
                 <h3 className="text-xl font-semibold">Shiva</h3>
 
@@ -258,7 +258,7 @@ function Admin() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Payroll Details</h2>
 
-            <div className="space-y-5">
+            <div className="space-y-5 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex justify-between">
                 <span>Shiva</span>
 
@@ -285,7 +285,7 @@ function Admin() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Notifications</h2>
 
-            <div className="space-y-5">
+            <div className="space-y-5 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
                 <h3 className="font-semibold">Payroll Completed</h3>
 

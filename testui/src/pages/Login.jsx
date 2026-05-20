@@ -28,7 +28,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f172a] relative flex items-center justify-center p-6 md:p-10 overflow-hidden">
+    <div className="min-h-screen bg-[#0f172a] relative flex items-center justify-center p-15 md:p-15 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-[-120px] left-[-120px] w-[500px] h-[500px] rounded-full bg-pink-500 opacity-20 blur-[140px]"></div>
 
@@ -59,7 +59,7 @@ function Login() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="bg-white px-2 py-3 md:px-16 md:py-16">
+        <div className="bg-white px-2 py-3 md:px-6 md:py-6">
           {/* Profile Icon */}
           <div className="flex justify-center">
             <div className="flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 to-purple-700 shadow-2xl">
@@ -77,43 +77,46 @@ function Login() {
           {/* FORM */}
           <form onSubmit={handleLogin} className="mt-12 space-y-8">
             {/* EMAIL */}
-            <div className="relative">
-              <User
-                size={20}
-                className="absolute left-5 top-1/2 -translate-y-1/2 text-pink-500"
-              />
+            <div className="flex flex-row gap-8 w-full">
+              {/* EMAIL */}
+              <div className="relative w-1/2">
+                <User
+                  size={20}
+                  className="absolute left-5 top-1/2 -translate-y-1/2 text-pink-500"
+                />
 
-              <input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full rounded-2xl border border-gray-200 py-5 pl-14 pr-5 shadow-sm outline-none transition focus:border-pink-500"
-              />
-            </div>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded-2xl border border-gray-200 py-5 pl-14 pr-5 shadow-sm outline-none transition focus:border-pink-500"
+                />
+              </div>
 
-            {/* PASSWORD */}
-            <div className="relative">
-              <Lock
-                size={20}
-                className="absolute left-5 top-1/2 -translate-y-1/2 text-pink-500"
-              />
+              {/* PASSWORD */}
+              <div className="relative w-1/2">
+                <Lock
+                  size={20}
+                  className="absolute left-5 top-1/2 -translate-y-1/2 text-pink-500"
+                />
 
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-2xl border border-gray-200 py-5 pl-14 pr-5 shadow-sm outline-none transition focus:border-pink-500"
-              />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full rounded-2xl border border-gray-200 py-5 pl-14 pr-5 shadow-sm outline-none transition focus:border-pink-500"
+                />
+              </div>
             </div>
 
             {/* LOGIN BUTTON */}
             <button
               type="submit"
-              className="w-full rounded-2xl bg-gradient-to-r from-pink-500 to-purple-700 py-5 text-lg font-bold text-white shadow-2xl transition duration-300 hover:scale-[1.02]"
+              className="w-1/4 mx-auto flex justify-center items-center rounded-2xl bg-gradient-to-r from-pink-500 to-purple-700 py-3 text-MD font-bold text-white shadow-2xl transition duration-300 hover:scale-[1.02]"
             >
-              LOGIN
+              SUBMIT
             </button>
           </form>
 

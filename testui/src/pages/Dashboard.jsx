@@ -188,7 +188,7 @@ function Dashboard() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Dashboard Overview</h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 w-[70%]">
               <div className="bg-gradient-to-br from-pink-500 to-pink-700 p-8 rounded-3xl shadow-2xl hover:scale-105 transition">
                 <h3 className="text-lg">Attendance</h3>
 
@@ -221,7 +221,7 @@ function Dashboard() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Attendance Details</h2>
 
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 w-[30%]">
               <div className="flex justify-between border-b border-white/10 py-4">
                 <span>Monday</span>
                 <span className="text-green-400">Present</span>
@@ -250,7 +250,7 @@ function Dashboard() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Leave Requests</h2>
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-3xl">
                 <h3 className="text-xl font-semibold">Casual Leave</h3>
 
@@ -279,7 +279,7 @@ function Dashboard() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Notifications</h2>
 
-            <div className="space-y-5">
+            <div className="space-y-5 w-[30%]">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
                 <h3 className="font-semibold">Payroll Generated</h3>
 
