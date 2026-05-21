@@ -114,17 +114,17 @@ function Login() {
             {/* LOGIN BUTTON */}
             <button
               type="submit"
-              className="w-1/4 mx-auto flex justify-center items-center rounded-2xl bg-gradient-to-r from-pink-500 to-purple-700 py-3 text-MD font-bold text-white shadow-2xl transition duration-300 hover:scale-[1.02]"
+              className="w-1/4 mx-auto mt-25 flex justify-center items-center rounded-2xl bg-gradient-to-r from-pink-500 to-purple-700 py-3 text-MD font-bold text-white shadow-2xl transition duration-300 hover:scale-[1.02]"
             >
               SUBMIT
             </button>
           </form>
 
           {/* Dummy Credentials */}
-          <div className="mt-10 rounded-2xl border border-pink-100 bg-pink-50 p-5">
+          {/* <div className="mt-10 rounded-2xl border border-pink-100 bg-pink-50 p-5">
             <h3 className="mb-4 font-bold text-pink-600">Dummy Credentials</h3>
 
-            {/* Employee */}
+
             <div className="mb-5">
               <h4 className="font-semibold text-gray-700">Employee Login</h4>
 
@@ -135,7 +135,7 @@ function Login() {
               <p className="text-sm text-gray-600">Password : 123456</p>
             </div>
 
-            {/* Admin */}
+
             <div>
               <h4 className="font-semibold text-gray-700">Admin / HR Login</h4>
 
@@ -143,7 +143,7 @@ function Login() {
 
               <p className="text-sm text-gray-600">Password : admin123</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

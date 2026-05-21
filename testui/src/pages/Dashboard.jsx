@@ -138,8 +138,8 @@ function Dashboard() {
 
         {/* POPUP */}
         {showPopup && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-[#111827] w-[400px] p-8 rounded-3xl border border-white/10 relative shadow-2xl">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 ">
+            <div className="bg-[#111827] w-[350px] p-4 rounded-2xl border border-white/10 relative shadow-2xl ms-[100px]">
               {/* CLOSE BUTTON */}
               <button
                 onClick={() => setShowPopup(false)}
@@ -148,14 +148,14 @@ function Dashboard() {
                 <X />
               </button>
 
-              <h2 className="text-3xl font-bold mb-6 text-center">
+              <h2 className="text-xl font-bold mb-3 text-center">
                 {isClockedIn ? "Clock Out" : "Clock In"}
               </h2>
 
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-                <p className="text-gray-400 mb-3">Current Time</p>
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                <p className="text-gray-400 mb-2">Current Time</p>
 
-                <h1 className="text-5xl font-bold">
+                <h1 className="text-3xl font-bold">
                   {new Date().toLocaleTimeString([], {
                     hour: "2-digit",
                     minute: "2-digit",
@@ -165,7 +165,7 @@ function Dashboard() {
 
               <button
                 onClick={handleClockAction}
-                className={`w-full mt-8 py-4 rounded-2xl text-lg font-semibold transition ${
+                className={`w-full mt-8 py-2 rounded-2xl text-lg font-semibold transition ${
                   isClockedIn
                     ? "bg-red-500 hover:bg-red-600"
                     : "bg-green-500 hover:bg-green-600"
